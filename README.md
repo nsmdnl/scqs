@@ -51,7 +51,7 @@ Then, you can style the element as you like with the [attribute selector](https:
 
 ```css
 div[cq-min-w-400] {
-  font-family: "Comic Sans MS"; /* ( ͡° ͜ʖ ͡°)  */
+  font-family: "Comic Sans MS"; /* trolololol  */
 }
 ```
 
