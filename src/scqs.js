@@ -6,7 +6,7 @@ const cqResizeObserver = new ResizeObserver((entries) => {
     const minWBreakpoints = JSON.parse(`[${target.dataset?.cqMinW}]`)
 
     minWBreakpoints.forEach((bp) => {
-      const attrName = `cq-min-${bp}`
+      const attrName = `cq-min-w-${bp}`
 
       if (elWidth >= bp && !target.hasAttribute(attrName)) {
         target.setAttribute(attrName, "")

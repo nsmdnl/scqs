@@ -14,6 +14,8 @@ npm install scqs
 
 ## Usage
 
+## Embed
+
 Embed it via script tag:
 
 ```html
@@ -23,7 +25,34 @@ Embed it via script tag:
 or import it in your file like this when using a JS Framework:
 
 ```js
-import "node_modules/scqs/dist"
+import "node_modules/scqs/dist/scqs.min.js"
+```
+
+## Define queries
+
+You can define `min-width`, `max-width`, `min-height` and `max-height` media queries for each element by adding the following attributes, of wich each can also have multiple values:
+
+```html
+<!-- Width -->
+<div data-cq-min-w="400, 800"></div>
+<div data-cq-max-w="1200"></div>
+<!-- Height -->
+<div data-cq-min-h="300"></div>
+<div data-cq-max-h="800, 1000"></div>
+```
+
+When the conditions apply to each element, the attribute `cq-{min/max}-{w/h}-{breakpoint}` is added to the element.
+
+```html
+<div data-cq-min-w="400, 800" cq-min-w-400></div>
+```
+
+Then, you can style the element as you like with the [attribute selector](https://www.w3schools.com/css/css_attribute_selectors.asp):
+
+```css
+div[cq-min-w-400] {
+  font-family: "Comic Sans MS"; /* ( ͡° ͜ʖ ͡°)  */
+}
 ```
 
 ## Browser support
