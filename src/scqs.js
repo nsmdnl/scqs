@@ -1,15 +1,17 @@
 const cqResizeObserver = new ResizeObserver((entries) => {
   entries.forEach((entry) => {
     const { target } = entry
-    const { dataset } = target
+    const { offsetWidth: targetWidth, offsetHeight: targetHeight } = target
 
     // Returns false or attribute value parsed as Array
-    const minWidth = dataset.cqMinW && JSON.parse(`[${dataset.cqMinW}]`)
-    const maxWidth = dataset.cqMaxW && JSON.parse(`[${dataset.cqMaxW}]`)
-    const minHeight = dataset.cqMinH && JSON.parse(`[${dataset.cqMinH}]`)
-    const maxHeight = dataset.cqMaxH && JSON.parse(`[${dataset.cqMaxH}]`)
-
-    const { offsetWidth: targetWidth, offsetHeight: targetHeight } = target
+    const minWidth =
+      target.dataset.cqMinW && JSON.parse(`[${target.dataset.cqMinW}]`)
+    const maxWidth =
+      target.dataset.cqMaxW && JSON.parse(`[${target.dataset.cqMaxW}]`)
+    const minHeight =
+      target.dataset.cqMinH && JSON.parse(`[${target.dataset.cqMinH}]`)
+    const maxHeight =
+      target.dataset.cqMaxH && JSON.parse(`[${target.dataset.cqMaxH}]`)
 
     // min-width
     minWidth?.forEach((breakpoint) => {
