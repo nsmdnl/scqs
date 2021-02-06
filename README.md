@@ -1,2 +1,2 @@
-# sqcs - Simple container queries 
+# scqs - Simple container queries 
 
