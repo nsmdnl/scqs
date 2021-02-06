@@ -1,4 +1,4 @@
-# scqs - Simple container queries
+# [WIP] scqs - Simple container queries
 
 [Changelog](CHANGELOG.md)
 
@@ -67,6 +67,16 @@ It is gladly supported by modern browsers. You can look up its browser support o
 ## Contribute to this project
 
 The main source is in `src/scqs.js`. When adding and changing code, please don't forget to add comments to the file that clarify what the code is doing. When commiting, please use [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0-beta.4/).
+
+`TODO: Mention Prettier`
+
+Install dependencies with yarn:
+
+```bash
+yarn
+```
+
+To compile scqs, [esbuild](https://github.com/evanw/esbuild) is used. just type `yarn build`, and a fresh `scqs.min.js` will be generated.
 
 ---
 

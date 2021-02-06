@@ -15,6 +15,15 @@ div {
   background: red;
   height: 30rem;
   flex: 1;
+  max-height: 100vh;
+}
+
+div[cq-max-w-800] {
+  background: yellow;
+}
+
+div[cq-max-w-400] {
+  background: pink;
 }
 
 div[cq-min-w-400] {
@@ -23,4 +32,8 @@ div[cq-min-w-400] {
 
 div[cq-min-w-800] {
   background: green;
+}
+
+div[cq-max-h-450] {
+  border: 15px solid blue;
 }
