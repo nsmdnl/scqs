@@ -3,57 +3,79 @@ const cqResizeObserver = new ResizeObserver((entries) => {
     const { target } = entry
     const { offsetWidth: targetWidth, offsetHeight: targetHeight } = target
 
+    // cq = container query
+    const { cqMinW, cqMaxW, cqMinH, cqMaxH } = target.dataset
+
     // Returns false or attribute value parsed as Array
-    const minWidth =
-      target.dataset.cqMinW && JSON.parse(`[${target.dataset.cqMinW}]`)
-    const maxWidth =
-      target.dataset.cqMaxW && JSON.parse(`[${target.dataset.cqMaxW}]`)
-    const minHeight =
-      target.dataset.cqMinH && JSON.parse(`[${target.dataset.cqMinH}]`)
-    const maxHeight =
-      target.dataset.cqMaxH && JSON.parse(`[${target.dataset.cqMaxH}]`)
+    const minWidth = cqMinW && parseBreakpoints(cqMinW)
+    const maxWidth = cqMaxW && parseBreakpoints(cqMaxW)
+    const minHeight = cqMinH && parseBreakpoints(cqMinH)
+    const maxHeight = cqMaxH && parseBreakpoints(cqMaxH)
 
     // min-width
-    minWidth?.forEach((breakpoint) => {
-      const attrName = `cq-min-w-${breakpoint}`
-      if (targetWidth >= breakpoint && !target.hasAttribute(attrName)) {
-        target.setAttribute(attrName, "")
-      } else if (targetWidth < breakpoint) {
-        target.removeAttribute(attrName)
-      }
-    })
+    minWidth?.forEach((breakpoint) =>
+      toggleAttribute(
+        "min-w",
+        breakpoint,
+        targetWidth >= breakpoint,
+        targetWidth < breakpoint,
+        target
+      )
+    )
 
     // max-width
-    maxWidth?.forEach((breakpoint) => {
-      const attrName = `cq-max-w-${breakpoint}`
-      if (targetWidth <= breakpoint && !target.hasAttribute(attrName)) {
-        target.setAttribute(attrName, "")
-      } else if (targetWidth > breakpoint) {
-        target.removeAttribute(attrName)
-      }
-    })
+    maxWidth?.forEach((breakpoint) =>
+      toggleAttribute(
+        "max-w",
+        breakpoint,
+        targetWidth <= breakpoint,
+        targetWidth > breakpoint,
+        target
+      )
+    )
 
     // min-height
-    minHeight?.forEach((breakpoint) => {
-      const attrName = `cq-min-h-${breakpoint}`
-      if (targetHeight >= breakpoint && !target.hasAttribute(attrName)) {
-        target.setAttribute(attrName, "")
-      } else if (targetHeight < breakpoint) {
-        target.removeAttribute(attrName)
-      }
-    })
+    minHeight?.forEach((breakpoint) =>
+      toggleAttribute(
+        "min-h",
+        breakpoint,
+        targetHeight >= breakpoint,
+        targetHeight < breakpoint,
+        target
+      )
+    )
 
     // max-height
-    maxHeight?.forEach((breakpoint) => {
-      const attrName = `cq-max-h-${breakpoint}`
-      if (targetHeight <= breakpoint && !target.hasAttribute(attrName)) {
-        target.setAttribute(attrName, "")
-      } else if (targetHeight > breakpoint) {
-        target.removeAttribute(attrName)
-      }
-    })
+    maxHeight?.forEach((breakpoint) =>
+      toggleAttribute(
+        "max-h",
+        breakpoint,
+        targetHeight <= breakpoint,
+        targetHeight > breakpoint,
+        target
+      )
+    )
   })
 })
+
+const parseBreakpoints = (breakpoints) => JSON.parse(`[${breakpoints}]`)
+
+// Functions
+function toggleAttribute(
+  cqType,
+  breakpoint,
+  condition,
+  counterCondition,
+  target
+) {
+  // e.g. cq-min-w-500
+  const attrName = `cq-${cqType}-${breakpoint}`
+  if (condition && !target.hasAttribute(attrName)) {
+    target.setAttribute(attrName, "")
+  } else if (counterCondition) {
+    target.removeAttribute(attrName)
+  }
+}
 
 // Get all elements
 const cqEls = Array.from(
@@ -62,7 +84,7 @@ const cqEls = Array.from(
   )
 )
 
-// Initiate
+// Initiate Resizeobserver
 cqEls.forEach((el) => {
   cqResizeObserver.observe(el, { box: "border-box" })
 })

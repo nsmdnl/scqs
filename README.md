@@ -27,7 +27,7 @@ Embed it via script tag:
 or import it in your file like this when using a JS Framework:
 
 ```js
-import "node_modules/scqs/dist/scqs.min.js"
+import "sqcs"
 ```
 
 ### Define queries
