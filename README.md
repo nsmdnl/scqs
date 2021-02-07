@@ -4,6 +4,8 @@ scqs is a lightweight **< 750 Bytes** package for emulating [Container Queries](
 
 [Changelog](CHANGELOG.md)
 
+Demo (coming soon)
+
 ## Installation
 
 You can either download the file `dist/scqs.min.js` and embed it locally, or install it via yarn/npm:
