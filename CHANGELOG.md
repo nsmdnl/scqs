@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/nsmdnl/css-container-queries/compare/v0.1.6...v0.3.0) (2021-02-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* change name from scqs to css-container-queries
+
+* change name from scqs to css-container-queries ([55c6afa](https://github.com/nsmdnl/css-container-queries/commit/55c6afa61eb5362b0a407b2b4bb196bc948e4438))
+
 ## [0.2.0](https://github.com/nsmdnl/css-container-queries/compare/v0.1.6...v0.2.0) (2021-02-07)
 
 
