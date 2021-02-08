@@ -38,7 +38,7 @@ As soon as you import css-container-queries on your website, it is ready to go! 
 
 ## 📐 Defining breakpoints
 
-You can define `min-width`, `max-width`, `min-height` and `max-height` media queries for each element by adding one or more of the following attributes:
+You can define `min-width`, `max-width`, `min-height` and `max-height` container queries for each element by adding one or more of the following attributes:
 
 ```html
 <!-- Width -->
