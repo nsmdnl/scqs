@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 0.4.0 (2021-05-09)
 
+### Features 
+
+* add MutationObserver to handle dynamically added DOM elements
 
 ### ⚠ BREAKING CHANGES
 
