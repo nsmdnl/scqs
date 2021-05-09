@@ -6,9 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-- add MutationObserver to handle dynamically added DOM elements
-
-### [0.3.1](https://github.com/nsmdnl/css-container-queries/compare/v0.3.0...v0.3.1) (2021-03-07)
+- add MutationObserver to handle dynamically added DOM elements ([087a579](https://github.com/nsmdnl/css-container-queries/commit/087a57935b791a5ddd76279bc49f8b0a7019b918))
 
 ## [0.3.0](https://github.com/nsmdnl/css-container-queries/compare/v0.1.6...v0.3.0) (2021-02-08)
 
